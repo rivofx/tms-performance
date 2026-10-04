@@ -1,0 +1,11 @@
+{
+  "name": "tms-performance-configurator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VIN + tuning configurator (Node 22.5+, fără dependențe externe)",
+  "engines": { "node": ">=22.5" },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "test": "node --disable-warning=ExperimentalWarning --test test.js"
+  }
+}

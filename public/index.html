@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ro"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TMS Performance — Configurator VIN & Tuning ECU</title>
+<meta name="description" content="Introdu VIN-ul și identificăm vehiculul. Estimări Stage 1 / Stage 2, diagnoză, electrică și electronică auto.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8F%8E%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=League+Spartan:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head><body>
+<header><a class="logo" href="/">TMS <b>Performance</b></a>
+<nav class="nav"><a data-g="1"><span>Servicii</span><span>Servicii</span></a><a data-g="2"><span>Configurator</span><span>Configurator</span></a><a data-g="3"><span>Contact</span><span>Contact</span></a></nav></header>
+
+<div class="stage">
+<section class="slide active"><div class="bg"></div>
+ <div class="mx" data-d="2"><div class="ring in"><div class="spin"><svg viewBox="0 0 400 400" fill="none"><circle cx="200" cy="200" r="190" stroke="rgba(255,255,255,.12)" stroke-width="2" stroke-dasharray="2 9"/><circle cx="200" cy="200" r="160" stroke="#ff3d1f" stroke-width="3" stroke-dasharray="520 480" stroke-linecap="round"/><circle cx="200" cy="200" r="130" stroke="rgba(255,255,255,.25)" stroke-width="14" stroke-dasharray="3 12"/><circle cx="200" cy="200" r="90" stroke="rgba(255,255,255,.1)" stroke-width="2"/><path d="M200 200 L200 80" stroke="#ff3d1f" stroke-width="4" stroke-linecap="round"/><circle cx="200" cy="200" r="10" fill="#ff3d1f"/></svg></div></div></div>
+ <div class="mx" data-d="1.4"><div class="chip in float" style="right:12vw;top:24%">VIN <b>→</b> ECU</div><div class="chip in float2" style="right:6vw;top:66%">STAGE 1 · STAGE 2</div><div class="chip in drift" style="right:30vw;top:78%">CAN-BUS</div></div>
+ <div class="sw"><div class="in eb">IDENTIFICĂ-ȚI MAȘINA</div>
+ <div class="in"><h1>CONFIGUREAZĂ-ȚI<br><span class="ac">MAȘINA.</span></h1></div>
+ <div class="in" style="max-width:600px"><p class="sub">Introdu VIN-ul și identificăm automat vehiculul.</p>
+ <div class="vr"><input id="hv" placeholder="VIN — 17 caractere" maxlength="20" autocomplete="off" autocapitalize="characters" aria-label="VIN"><button class="btn p" id="hb">IDENTIFICĂ MAȘINA</button></div>
+ <a class="note" id="hm" style="display:block;cursor:pointer;color:#fff;opacity:.85;font-size:16px">sau Alege manual mașina →</a></div></div>
+</section>
+
+<section class="slide"><div class="bg b2"></div>
+ <div class="sw"><div class="in"><div class="eb">ALEGE SERVICIUL</div><h2>Ce are nevoie<br>mașina ta?</h2></div>
+ <div class="grid" id="cards"></div></div>
+</section>
+
+<section class="slide"><div class="bg b3"></div>
+ <div class="sw"><div class="in"><div class="eb">CONFIGURATOR</div><h2>Configurează <span class="ac">mașina ta</span></h2></div>
+ <div class="card in" style="margin-bottom:18px"><span class="lbl">OPȚIUNEA 1 · INTRODU VIN-UL</span>
+  <div class="vr"><input id="vin" placeholder="WBAxxxxxxxxxxxxxxx" maxlength="20" autocomplete="off" autocapitalize="characters" aria-label="VIN"><button class="btn p" id="vb">IDENTIFICĂ MAȘINA</button></div>
+  <div id="vs" class="note" style="font-size:16px;opacity:1" role="status"></div><div id="vr2"></div>
+  <p class="note">VIN-ul este folosit doar pentru identificarea vehiculului și pregătirea ofertei, conform politicii de confidențialitate.</p></div>
+ <div class="cfg">
+  <div class="card in" id="manual"><h3>OPȚIUNEA 2 · CONFIGUREAZĂ MANUAL</h3><div class="fld">
+   <select id="sMk" aria-label="Marcă"></select><select id="sMo" aria-label="Model"></select><select id="sGe" aria-label="Generație"></select><select id="sYr" aria-label="An"></select><select id="sEn" aria-label="Motorizare"></select>
+   <div id="dt" class="note" style="margin:0"></div><select id="sEcu" aria-label="ECU" style="display:none"></select></div></div>
+  <div class="card in"><h3>CONFIGURAȚIA TA</h3><div id="out"><div class="warn">Identifică mașina după VIN sau alege-o manual ca să vezi stock, Stage 1, Stage 2 și prețurile.</div></div>
+  <p class="note">Valorile Stage 1 / Stage 2 sunt estimări, nu garanții. Rezultatul real depinde de motor, ECU, hardware, combustibil, starea mașinii și calibrarea efectivă.</p></div>
+ </div>
+ <div class="card bar in"><div><span class="lbl">CONFIGURAȚIA TA</span><strong id="cs">—</strong></div><a class="btn p" id="cq">CERE OFERTĂ PERSONALIZATĂ</a></div>
+ </div>
+</section>
+
+<section class="slide"><div class="bg b2"></div>
+ <div class="sw" style="display:flex;flex-direction:column;justify-content:center">
+ <div class="in"><h2>Hai să punem<br>mașina <span class="ac">la punct.</span></h2></div>
+ <div class="in"><p class="sub">Trimite configurația și te contactăm pentru confirmare și ofertă personalizată.</p>
+ <div class="btns"><a class="btn p" data-q="Cerere generală">CERE O OFERTĂ</a><a class="btn wa" data-wa>Vorbește cu un specialist</a></div></div>
+ <div class="in" style="margin-top:28px;font-size:19px;line-height:1.7;font-weight:300"><a style="color:#fff;text-decoration:none" href="tel:+40768429345">📞 +40 768 429 345</a><br><a style="color:#fff;text-decoration:none" href="mailto:tomsastefanemilian29@yahoo.com">✉️ tomsastefanemilian29@yahoo.com</a><br><a style="color:#fff;text-decoration:none" target="_blank" rel="noopener" href="https://instagram.com/t.m.s_performance">📷 t.m.s_performance</a></div>
+ <div class="in note" style="max-width:46em;margin-top:24px">Intervențiile asupra sistemelor de emisii sunt efectuate numai în limitele legislației aplicabile și în funcție de destinația și configurația vehiculului.</div>
+ <div class="in note" style="border-top:1px solid var(--l);padding-top:16px;margin-top:24px;font-size:15px">© <span id="yr"></span> TMS Performance</div>
+ </div>
+</section>
+</div>
+
+<a class="btn wa wab" data-wa>Vorbește cu un specialist</a>
+
+<div class="mod" id="qm"><div class="mc"><button class="x" data-x aria-label="Închide">&times;</button><h4>Cere ofertă</h4><p class="sm" id="qs"></p>
+<form id="qf" class="col"><div class="row2"><input name="name" placeholder="Nume *" required maxlength="100"><input name="phone" type="tel" placeholder="Telefon *" required maxlength="25"></div>
+<div class="row2"><input name="whatsapp" placeholder="WhatsApp" maxlength="30"><input name="email" type="email" placeholder="Email" maxlength="120"></div>
+<div class="row2"><input name="km" placeholder="Kilometraj" maxlength="20"><input name="city" placeholder="Oraș" maxlength="80"></div>
+<input name="mods" placeholder="Modificări existente pe mașină" maxlength="500"><textarea name="message" rows="3" placeholder="Mesaj / descriere problemă" maxlength="2000"></textarea>
+<label class="note" style="margin:0">Fotografii / documente (max. 3 fișiere, 4 MB fiecare — JPG, PNG, WEBP, PDF)</label><input name="files" type="file" multiple accept="image/jpeg,image/png,image/webp,application/pdf">
+<div id="qe" class="note" style="color:#ff7a66;opacity:1" role="alert"></div>
+<button class="btn p" type="submit" id="qb">TRIMITE CEREREA</button></form></div></div>
+
+<div class="pop" id="pop"><div class="pc"><div class="pi"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h5>Cerere trimisă</h5><p>Cererea ta a fost trimisă. Te vom contacta pentru confirmarea configurației și oferta personalizată.</p><i class="pb"></i></div></div>
+<div class="pbar"><i id="pb"></i></div>
+<div class="side"><button id="prev" aria-label="Înapoi"><svg viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg></button><div class="line"></div><button id="next" aria-label="Înainte"><svg viewBox="0 0 24 24"><path d="M5 9l7 7 7-7"/></svg></button></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="/app.js"></script>
+</body></html>
